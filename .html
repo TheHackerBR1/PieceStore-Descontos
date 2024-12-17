@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resgate de Código - Piece Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .resgate {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .resgate h2 {
+            color: #007BFF;
+        }
+        .resgate input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .resgate button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .resgate button:hover {
+            background-color: #0056b3;
+        }
+        .mensagem {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo ao Meu Site!</h1>
+    <p>Tem um codigo Então faça o resgate .</p>
+
+
+    <div class="resgate">
+        <h2>Resgate seu código de desconto da Piece Store</h2>
+        <p>Resgate e tire Print</p>
+        <input type="text" id="codigoDesconto" placeholder="Digite seu código aqui" />
+        <button onclick="resgatarCodigo()">Resgatar Código</button>
+        <div class="mensagem" id="mensagem"></div>
+    </div>
+
+    <script>
+        function resgatarCodigo() {
+            const codigo = document.getElementById('codigoDesconto').value;
+            const mensagem = document.getElementById('mensagem');
+
+            // Lista de códigos de desconto válidos
+            const codigosValidos = ["Lag2024", "TheHackers", "Two Piece", "AdminHacker"];
+
+            if (codigosValidos.includes(codigo)) {
+                mensagem.textContent = "Código resgatado com sucesso! Aproveite seu desconto!";
+                mensagem.style.color = "green";
+            } else {
+                mensagem.textContent = "Código inválido. Tente novamente.";
+                mensagem.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
